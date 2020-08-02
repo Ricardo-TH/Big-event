@@ -18,6 +18,7 @@ $(function(){
 })
 
 // 获取用户基本信息
+// (此方法必须是全局的，后面要用，所以不写在入口函数中)
 function getUserInfo(){
     $.ajax({
         method:'GET',
@@ -28,7 +29,7 @@ function getUserInfo(){
         // },
         success:function(res){
             // token可能24h失效，重新登录就好了
-            console.log(res);
+            // console.log(res);
             if (res.status != 0) {    
                 return layui.layer.msg(res.message)
             }
